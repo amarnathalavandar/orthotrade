@@ -1,0 +1,102 @@
+name: orthotrade
+description: "Ortho Trade Flutter Project"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+#-------- PACKAGES-----------#
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #Utility Packages
+  http: ^1.1.0
+  intl: ^0.19.0
+  logger: ^2.0.1
+  url_launcher: ^6.1.12
+  flutter_native_splash: ^2.3.2
+  smooth_page_indicator: ^1.1.0
+  lottie: ^2.7.0
+  connectivity_plus: ^5.0.1
+  shimmer: ^3.0.0
+  image_picker: ^1.0.7
+  mailer: ^6.0.1
+  googleapis_auth: ^1.4.1
+  googleapis: any
+  open_file: ^3.3.2
+  pdf: any
+  printing: any
+  google_fonts: ^6.1.0
+  remixicon: ^1.2.0
+
+  #DEBUG ONLY
+  device_preview: ^1.2.0
+
+
+  # Icons
+  iconsax:  ^0.0.8
+  cupertino_icons: ^1.0.8
+
+
+
+  # State Management
+  get: ^4.6.6
+  get_storage: ^2.1.1
+
+  # Product Specfic
+  readmore: ^2.2.0
+  carousel_slider: ^4.2.1
+
+
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.15.0
+  google_sign_in: ^6.2.1
+  firebase_storage: ^11.6.4
+  cached_network_image: ^3.3.1
+  #----------------- PACKAGES END -------------------#
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  #--------------------------- LOCAL ASSETS ---------------------#
+
+  assets:
+    - assets/logos/
+    - assets/images/banners/
+    - assets/images/user/
+    - assets/images/animations/
+    - assets/images/on_boarding_images/
+
+
+
+
+  #--------------------------- LOCAL FONTS ---------------------#
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600

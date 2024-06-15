@@ -1,0 +1,70 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
+import '../../../../utils/constants/text_strings.dart';
+import '../../../../utils/helpers/helper_functions.dart';
+import '../../controllers/signup/verify_email_controller.dart';
+import '../login/login.dart';
+
+class VerifyEmailScreen extends StatelessWidget {
+  const VerifyEmailScreen({super.key ,this.email});
+
+
+  final String? email;
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
+
+    return  Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(onPressed: () => Get.offAll(()=>const LoginScreen()), icon: const Icon(CupertinoIcons.clear))
+        ],
+      ),
+      body:  SingleChildScrollView(
+        child: Padding(
+            padding: const EdgeInsets.all(MOSizes.defaultSpace),
+          child: Column(
+            children: [
+              /// Image
+                Image(image: const AssetImage(MOImages.deliveredEmailIllustration),
+                  width: MOHelperFunctions.screenWidth()*0.6,),
+              const SizedBox(height: MOSizes.spaceBtwSections,),
+
+              /// Title and SubTitle
+              Text(MOTexts.confirmEmail,style: Theme.of(context).textTheme.headlineMedium,textAlign: TextAlign.center,),
+              const SizedBox(height: MOSizes.spaceBtwSections,),
+              Text('support@kamionscs.com',style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
+              const SizedBox(height: MOSizes.spaceBtwSections,),
+              Text(MOTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium,textAlign: TextAlign.center),
+              const SizedBox(height: MOSizes.spaceBtwSections,),
+
+              /// Buttons
+              SizedBox(width:double.infinity,child:ElevatedButton(onPressed: () =>controller.checkEmailVerificationStatus(),
+                child: const Text(MOTexts.tContinue),)),
+              const SizedBox(height: MOSizes.spaceBtwSections,),
+              SizedBox(width:double.infinity,child:TextButton(onPressed: ()=>controller.sendEmailVerification(),child: const Text(MOTexts.resendEmail),))
+
+
+
+
+            ],
+          ),
+
+        ),
+
+      ),
+
+
+
+
+
+    );
+  }
+}
